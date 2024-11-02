@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postLoginData } from '../redux/actions/authActions';
 import Loader from './utils/Loader';
 import { useEffect } from 'react';
-
+// login form
 const LoginForm = ({ redirectUrl }) => {
 
   const [formErrors, setFormErrors] = useState({});
@@ -28,13 +28,13 @@ const LoginForm = ({ redirectUrl }) => {
   }, [authState, redirectUrl, isLoggedIn, navigate]);
 
 
-
+// handles change in thr form
   const handleChange = e => {
     setFormData({
       ...formData, [e.target.name]: e.target.value
     });
   }
-
+// handles submission of form 
   const handleSubmit = e => {
     e.preventDefault();
     const errors = validateManyFields("login", formData);

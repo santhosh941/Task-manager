@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 import validateManyFields from '../validations';
 import Input from './utils/Input';
 import Loader from './utils/Loader';
-
+// signuup form
 const SignupForm = () => {
 
   const [formErrors, setFormErrors] = useState({});
@@ -15,13 +15,13 @@ const SignupForm = () => {
   });
   const [fetchData, { loading }] = useFetch();
   const navigate = useNavigate();
-
+// handles change
   const handleChange = e => {
     setFormData({
       ...formData, [e.target.name]: e.target.value
     });
   }
-
+  // handles submit
   const handleSubmit = e => {
     e.preventDefault();
     const errors = validateManyFields("signup", formData);
